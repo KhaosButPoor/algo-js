@@ -15,7 +15,7 @@ class Pokemon {
     if (this.isLucky()) {
       let damages = this.attack - pokemon.defense;
       pokemon.hp -= damages;
-      console.log(`${this.name} a attaqué ${pokemon.name}, perdant ${damages} hp !`);
+      console.log(`${this.name} attacked ${pokemon.name}, losing ${damages} hp !`);
     } else {
       console.log(`${this.name} a raté son attaque !`);
     }
@@ -29,3 +29,8 @@ let Moltres = new Pokemon('Moltres', 85, 90, 100, 70);
 
 Kingambit.attackPokemon(Moltres);
 
+if (pokemon.hp >= 0) {
+  Kingambit.attackPokemon(Moltres);
+} else {
+  console.log(`${this.name} has fainted !`);
+}
